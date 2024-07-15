@@ -14,7 +14,6 @@ export default function Home() {
               </p>
           </div>
 
-          {/* Upload Box */}
           <Dropzone />
       </div>
   );

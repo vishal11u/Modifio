@@ -105,11 +105,13 @@ export default function Dropzone() {
     setIsReady(false);
     setIsConverting(false);
   };
+
   const downloadAll = (): void => {
     for (let action of actions) {
       !action.is_error && download(action);
     }
   };
+
   const download = (action: Action) => {
     const a = document.createElement("a");
     a.style.display = "none";
@@ -123,6 +125,7 @@ export default function Dropzone() {
     URL.revokeObjectURL(action.url);
     document.body.removeChild(a);
   };
+
   const convert = async (): Promise<any> => {
     let tmp_actions = actions.map((elt) => ({
       ...elt,
